@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "outDir": "./dist",
+    "paths": {
+      "@bussin/context-logger": ["src/index.ts"],
+      "@bussin/context-logger/core": ["src/core/index.ts"],
+      "@bussin/context-logger/winston": ["src/winston/index.ts"]
+    },
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2022",
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "jest"]
+  },
+  "exclude": ["benchmark/", "build/", "coverage/", "dist/", "node_modules/", "outputs/", "result/"],
+  "include": ["examples/", "src/", "test/"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
