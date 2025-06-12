@@ -1,6 +1,6 @@
 {
   "name": "@bussin/context-logger",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A TypeScript native context capturing logger.",
   "author": "wesley.thorsen@gmail.com",
   "license": "MIT",
