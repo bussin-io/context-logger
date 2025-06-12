@@ -26,6 +26,11 @@
       "require": "./dist-cjs/index.js",
       "types": "./dist-types/index.d.ts"
     },
+    "./console": {
+      "import": "./dist-es/console/index.js",
+      "require": "./dist-cjs/console/index.js",
+      "types": "./dist-types/console/index.d.ts"
+    },
     "./winston": {
       "import": "./dist-es/winston/index.js",
       "require": "./dist-cjs/winston/index.js",
