@@ -1,0 +1,65 @@
+name: Bump Version
+run-name: Bump → ${{ inputs.version }} - @${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        type: string
+        description: Version (semver)
+
+permissions:
+  contents: write
+
+jobs:
+  validate_input:
+    name: Validate input
+    runs-on: ubuntu-latest
+
+    outputs:
+      version: ${{ steps.validate_semver.outputs.version }}
+
+    steps:
+      - name: Validate input version
+        id: validate_semver
+        uses: matt-usurp/validate-semver@v2
+        with:
+          version: ${{ github.event.inputs.version }}
+
+      - name: Validate non-prerelease input version targets develop branch only
+        run: |
+          if [[ -z "${{ steps.validate_semver.outputs.prerelease }}" ]]; then
+            if [[ "${{ github.ref_name }}" != "develop" ]]; then
+              echo "::error ::Non-prerelease versions must be released from 'develop'."
+              exit 1
+            fi
+          fi
+
+  set_version_and_push_tag:
+    name: Set Version & Push Tag
+    needs: validate_input
+    runs-on: ubuntu-latest
+
+    outputs:
+      version_tag_ref: ${{ steps.set_version.outputs.version_tag_ref }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.CONTENTS_WRITE_TOKEN }}
+
+      - name: Set version and tag
+        id: set_version
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --detach
+          VERSION=$(npm version "${{ needs.validate_input.outputs.version }}")
+          echo "version_tag_ref=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Push tag
+        id: push_tag
+        run: |
+          git push -u origin "${{ steps.set_version.outputs.version_tag_ref }}"

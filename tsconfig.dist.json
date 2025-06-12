@@ -1,0 +1,16 @@
+{
+  // excludes ./test/* from the dist build
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "benchmark/",
+    "build/",
+    "coverage/",
+    "dist/",
+    "examples/",
+    "node_modules/",
+    "outputs/",
+    "result/",
+    "test/"
+  ],
+  "include": ["src/"]
+}

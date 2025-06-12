@@ -1,0 +1,7 @@
+.clinic/
+*/**/*.0x/
+build/
+coverage/
+dist/
+node_modules/
+outputs/

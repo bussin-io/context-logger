@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.dist.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "importHelpers": true,
+    "lib": ["DOM"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmitHelpers": false,
+    "outDir": "dist-es",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2020"
+  }
+}
