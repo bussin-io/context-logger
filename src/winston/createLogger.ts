@@ -1,4 +1,4 @@
-import { IContextLogger } from 'src/core';
+import { IContextLogger } from '@bussin/context-logger/core';
 import { WinstonContextLogger } from './WinstonContextLogger';
 import { WinstonContextLoggerOptions } from './WinstonContextLoggerOptions';
 

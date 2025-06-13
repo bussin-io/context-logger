@@ -1,6 +1,6 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { config, format, Logger, LoggerOptions, transports } from 'winston';
-import { ContextOptions, IContextLogger } from 'src/core';
+import { ContextOptions, IContextLogger } from '@bussin/context-logger/core';
 import { WinstonContextLoggerOptions } from './WinstonContextLoggerOptions';
 
 export class WinstonContextLogger extends Logger implements IContextLogger {
