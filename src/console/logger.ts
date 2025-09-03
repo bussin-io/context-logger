@@ -1,5 +1,5 @@
-import { IContextLogger } from '@bussin/context-logger/core';
-import { createLogger } from './createLogger';
+import { IContextLogger } from '#core';
+import { createLogger } from './createLogger.js';
 
 const globalSymbol = Symbol.for('@bussin/context-logger/console/singleton');
 

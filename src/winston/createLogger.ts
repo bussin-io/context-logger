@@ -1,6 +1,6 @@
-import { IContextLogger } from '@bussin/context-logger/core';
-import { WinstonContextLogger } from './WinstonContextLogger';
-import { WinstonContextLoggerOptions } from './WinstonContextLoggerOptions';
+import { IContextLogger } from '#core';
+import { WinstonContextLogger } from './WinstonContextLogger.js';
+import { WinstonContextLoggerOptions } from './WinstonContextLoggerOptions.js';
 
 export function createLogger(): IContextLogger;
 export function createLogger(options: WinstonContextLoggerOptions): IContextLogger;

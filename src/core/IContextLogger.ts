@@ -1,5 +1,5 @@
-import { ContextOptions } from './ContextOptions';
-import { LogMethod } from './LogMethod';
+import { ContextOptions } from './ContextOptions.js';
+import { LogMethod } from './LogMethod.js';
 
 export interface IContextLogger {
   addContext<TResult, TContext extends object = object>(

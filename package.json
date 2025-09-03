@@ -4,7 +4,12 @@
   "description": "A TypeScript native context capturing logger.",
   "author": "wesley.thorsen@gmail.com",
   "license": "MIT",
+  "sideEffects": false,
   "private": false,
+  "engines": {
+    "node": ">=18",
+    "npm": ">=10"
+  },
   "repository": {
     "type": "github",
     "url": "https://github.com/bussin-io/context-logger"
@@ -20,6 +25,14 @@
   "files": [
     "dist-*/**"
   ],
+  "imports": {
+    "#core": "./dist-es/core/index.js",
+    "#core/*": "./dist-es/core/*/index.js",
+    "#console": "./dist-es/console/index.js",
+    "#console/*": "./dist-es/console/*/index.js",
+    "#winston": "./dist-es/winston/index.js",
+    "#winston/*": "./dist-es/winston/*/index.js"
+  },
   "exports": {
     ".": {
       "import": "./dist-es/index.js",
@@ -42,14 +55,25 @@
       "types": "./dist-types/winston/index.d.ts"
     }
   },
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "types": "./dist-types/index.d.ts",
+  "typesVersions": {
+    "<4.7": {
+      "*": [
+        "dist-types/*"
+      ]
+    }
+  },
   "scripts": {
-    "build": "npm run clean && npm ci && concurrently 'npm:build:cjs' 'npm:build:es' 'npm:build:types'",
-    "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias",
-    "build:es": "tsc -p tsconfig.es.json && tsc-alias",
-    "build:types": "tsc -p tsconfig.types.json && tsc-alias",
+    "build": "npm run clean && concurrently 'npm:build:cjs' 'npm:build:es' 'npm:build:types'",
+    "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json",
+    "build:es": "tsc -p tsconfig.es.json && tsc-alias -p tsconfig.es.json",
+    "build:types": "tsc -p tsconfig.types.json && tsc-alias -p tsconfig.types.json",
     "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
-    "lint": "eslint --fix */**/*.ts && prettier --write */**/*.ts",
-    "test": "jest"
+    "lint": "eslint --no-warn-ignored --fix */**/*.ts && prettier --write */**/*.ts",
+    "test": "jest",
+    "prepack": "npm run clean && npm run build && node test/smoke/smoke-esm.test.mjs && node test/smoke/smoke-cjs.test.cjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",

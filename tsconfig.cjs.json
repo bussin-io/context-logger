@@ -3,13 +3,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "importHelpers": false,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noEmitHelpers": false,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2020",
+    "lib": ["ES2020"],
     "outDir": "dist-cjs",
     "rootDir": "src",
     "sourceMap": false,
     "strict": true,
-    "target": "ES2018"
+    "noEmitHelpers": false
   }
 }

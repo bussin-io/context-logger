@@ -1,6 +1,6 @@
-import { IContextLogger } from '@bussin/context-logger/core';
-import { ConsoleContextLogger } from './ConsoleContextLogger';
-import { ConsoleContextLoggerOptions } from './ConsoleContextLoggerOptions';
+import { IContextLogger } from '#core';
+import { ConsoleContextLogger } from './ConsoleContextLogger.js';
+import { ConsoleContextLoggerOptions } from './ConsoleContextLoggerOptions.js';
 
 export function createLogger(): IContextLogger;
 export function createLogger(options: ConsoleContextLoggerOptions): IContextLogger;

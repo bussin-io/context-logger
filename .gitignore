@@ -144,3 +144,6 @@ dist
 
 # 0x profiling output
 /**/*.0x
+
+# ai coding tools
+.claude/

@@ -1,6 +1,6 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { ContextOptions, IContextLogger, LogMethod } from '@bussin/context-logger/core';
-import { ConsoleContextLoggerOptions } from './ConsoleContextLoggerOptions';
+import { ContextOptions, IContextLogger, LogMethod } from '#core';
+import { ConsoleContextLoggerOptions } from './ConsoleContextLoggerOptions.js';
 
 export class ConsoleContextLogger implements IContextLogger {
   private readonly storage = new AsyncLocalStorage<object>();
