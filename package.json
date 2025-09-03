@@ -25,14 +25,6 @@
   "files": [
     "dist-*/**"
   ],
-  "imports": {
-    "#core": "./dist-es/core/index.js",
-    "#core/*": "./dist-es/core/*/index.js",
-    "#console": "./dist-es/console/index.js",
-    "#console/*": "./dist-es/console/*/index.js",
-    "#winston": "./dist-es/winston/index.js",
-    "#winston/*": "./dist-es/winston/*/index.js"
-  },
   "exports": {
     ".": {
       "import": "./dist-es/index.js",
@@ -67,9 +59,9 @@
   },
   "scripts": {
     "build": "npm run clean && concurrently 'npm:build:cjs' 'npm:build:es' 'npm:build:types'",
-    "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json",
-    "build:es": "tsc -p tsconfig.es.json && tsc-alias -p tsconfig.es.json",
-    "build:types": "tsc -p tsconfig.types.json && tsc-alias -p tsconfig.types.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:types": "tsc -p tsconfig.types.json",
     "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
     "lint": "eslint --no-warn-ignored --fix */**/*.ts && prettier --write */**/*.ts",
     "test": "jest",
@@ -91,8 +83,6 @@
     "rimraf": "^5.0.10",
     "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2",
-    "tsc-alias": "^1.8.16",
-    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.42.0"
   },

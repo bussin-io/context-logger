@@ -1,4 +1,4 @@
-import { IContextLogger } from '#core';
+import { IContextLogger } from '../core/index.js';
 import { WinstonContextLogger } from './WinstonContextLogger.js';
 import { WinstonContextLoggerOptions } from './WinstonContextLoggerOptions.js';
 

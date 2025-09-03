@@ -1,4 +1,4 @@
-import { IContextLogger } from '#core';
+import { IContextLogger } from '../core/index.js';
 import { ConsoleContextLogger } from './ConsoleContextLogger.js';
 import { ConsoleContextLoggerOptions } from './ConsoleContextLoggerOptions.js';
 

@@ -6,21 +6,15 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "lib": ["ES2022"],
+    "lib": [
+      "ES2022"
+    ],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "verbatimModuleSyntax": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "outDir": "./dist",
-    "paths": {
-      "#core": ["src/core/index.ts"],
-      "#core/*": ["src/core/*/index.ts"],
-      "#console": ["src/console/index.ts"],
-      "#console/*": ["src/console/*/index.ts"],
-      "#winston": ["src/winston/index.ts"],
-      "#winston/*": ["src/winston/*/index.ts"]
-    },
     "preserveConstEnums": true,
     "removeComments": true,
     "resolveJsonModule": true,
@@ -29,12 +23,26 @@
     "sourceMap": true,
     "strict": true,
     "target": "ES2022",
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "jest"]
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ]
   },
-  "exclude": ["benchmark/", "build/", "coverage/", "dist/", "node_modules/", "outputs/", "result/"],
-  "include": ["examples/", "src/", "test/"],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  }
+  "exclude": [
+    "benchmark/",
+    "build/",
+    "coverage/",
+    "dist/",
+    "node_modules/",
+    "outputs/",
+    "result/"
+  ],
+  "include": [
+    "examples/",
+    "src/",
+    "test/"
+  ]
 }
