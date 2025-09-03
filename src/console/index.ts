@@ -1,4 +1,4 @@
 export * from './createLogger.js';
 export * from './logger.js';
-export * from './ConsoleContextLogger.js';
-export * from './ConsoleContextLoggerOptions.js';
+export { ConsoleContextLogger } from './ConsoleContextLogger.js';
+export { type ConsoleContextLoggerOptions } from './ConsoleContextLoggerOptions.js';

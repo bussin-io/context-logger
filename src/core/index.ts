@@ -1,3 +1,3 @@
-export * from './ContextOptions.js';
-export * from './IContextLogger.js';
-export * from './LogMethod.js';
+export { type ContextOptions } from './ContextOptions.js';
+export { type IContextLogger } from './IContextLogger.js';
+export { type LogMethod } from './LogMethod.js';

@@ -1,7 +1,10 @@
-import { IContextLogger } from '@bussin/context-logger';
-import { createLogger } from '@bussin/context-logger/winston';
+// Winston implementation example
+// Winston is now the default implementation - you can use either import style
+import { createLogger, IContextLogger } from '@bussin/context-logger';
+// Or explicitly: import { createLogger } from '@bussin/context-logger/winston';
 
 const run = async () => {
+  // Winston logger with rich formatting and transport options
   const logger: IContextLogger = createLogger({ level: 'debug' });
 
   logger.info('info log message', { meta: 'abc' });

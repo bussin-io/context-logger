@@ -1,3 +1,5 @@
+// Concurrency example with context isolation
+// Uses the default winston implementation
 import { logger } from '@bussin/context-logger';
 
 const sleep = async (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
